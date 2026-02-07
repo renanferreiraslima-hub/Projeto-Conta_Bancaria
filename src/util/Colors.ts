@@ -1,4 +1,4 @@
-export const colors = {
+export const Colors = {
     reset: "\x1b[0m",  
     fg: {
         black: "\x1b[30m",
@@ -19,6 +19,13 @@ export const colors = {
 	    magentastrong : "\x1b[1;35m",
 	    cyanstrong : "\x1b[1;36m",
         whitestrong: "\x1b[1;37m",
+        brightRed: "\x1b[91m",
+        brightGreen: "\x1b[92m",
+        brightYellow: "\x1b[93m",
+        brightBlue: "\x1b[94m",
+        brightMagenta: "\x1b[95m",
+        brightCyan: "\x1b[96m",
+        brightWhite: "\x1b[97m",
     },
     bg: {
         black: "\x1b[40m",
