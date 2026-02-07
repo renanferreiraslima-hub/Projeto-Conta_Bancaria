@@ -103,6 +103,11 @@ export class Conta{
     //Metodos auxiliares
 
     public sacar(valor: number): boolean{
+
+        if(valor <= 0){
+            console.log(colors.fg.red, "O valor deve ser positivo", colors.reset);
+            return false;
+        }
         if(valor > this._saldo){
             console.log(colors.fg.red, "Saldo Insuficiente", colors.reset);
             return false;

@@ -1,33 +1,39 @@
 import leia from "readline-sync"
 import { colors } from './src/util/Colors';
-import { Conta } from "./src/model/Conta";
+import { ContaPoupanca } from "./src/model/ContaPaupanca";
+import { ContaCorrente } from "./src/model/ContaCorrente";
+import { Input } from "./src/util/Input";
+
+
+
 export function main(): void {
     let opcao: number;
 
 
-    // Instanciar objetos da Classe Conta
+    // Instanciar objetos da Classe Conta Corrente
 
-    const c1 = new Conta(1, 1234, "Sofia", 1, 100000.00);
+    const cc1 = new ContaCorrente(1, 1234, "Sofia", 1, 200000.00, 2000.00);
 
-    c1.visualizar();
+    cc1.visualizar();
 
     //Testes do metodo Sacar
 
-    console.log("Sacar 100,00: ", c1.sacar(100.00));
-    console.log("Sacar 200000,00: ", c1.sacar(200000.00));
-    console.log("Sacar 0,00: ", c1.sacar(0.00));
+    console.log("Sacar 100,00: ", cc1.sacar(100.00));
+    console.log("Sacar 200000,00: ", cc1.sacar(200000.00));
+    console.log("Sacar 0,00: ", cc1.sacar(0.00));
 
     //Teste do metodo depositar
 
     console.log("Depositar -10,00: ");
-    c1.depositar(-10.00);
+    cc1.depositar(-10.00);
 
     console.log("Depositar 500,00: ");
-    c1.depositar(500.00);
+    cc1.depositar(500.00);
 
-    c1.visualizar();
+    cc1.visualizar();
 
-
+   
+  
     while(true){
 
         console.log(colors.bg.black, colors.fg.yellow,
@@ -56,7 +62,7 @@ export function main(): void {
         console.log("Entre com a opção desejada: ");
         opcao = leia.questionInt("");
 
-        if(opcao == 9){
+        if(opcao === 0){
             console.log(colors.fg.greenstrong,
                 "\nBanco do Brazil com Z - O seu futuro comeca aqui!");
             sobre();
@@ -118,5 +124,10 @@ export function sobre(): void{
     console.log("Projeto Desenvolvido por: ");
     console.log("Renan Ferreira Soares de Lima - renanferreiraslima@gmail.com");
     console.log("*****************************************************");
+    }
+
+    function keyPress(): void{
+        console.log(colors.reset,"\nPressione enter para continuar...");
+        Input.prompt();
     }
 main();
