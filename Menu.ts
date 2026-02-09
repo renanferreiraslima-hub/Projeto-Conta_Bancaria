@@ -318,8 +318,7 @@ function deletarContaPorNumero(): void{
 function sobre(): void {
     console.log("\n*****************************************************");
     console.log("Projeto Desenvolvido por: ");
-    console.log("Rafael Antônio de Queiróz - rafaelproinfo@gmail.com");
-    console.log("github.com/rafaelq80");
+    console.log("Renan Ferreira Soares de Lima - renanferreiraslima@gmail.com");
     console.log("*****************************************************");
 }
 
